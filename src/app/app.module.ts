@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { ButtonComponent } from './components/button/button.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ButtonComponent
+    ButtonComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
