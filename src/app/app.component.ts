@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+
+  textRegisterUser = 'Cadastrar usuário';
   title = 'crud-usuarios';
 }
