@@ -2,6 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "strictPropertyInitialization": false,/*armazena varíaveis sem valor*/
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
