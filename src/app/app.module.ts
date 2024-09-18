@@ -8,7 +8,11 @@ import { ButtonComponent } from './components/button/button.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
+
+//ANGULAR MATERIAL
 import { MatIconModule } from '@angular/material/icon'
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 @NgModule({
   declarations: [
@@ -16,12 +20,13 @@ import { MatIconModule } from '@angular/material/icon'
     ButtonComponent,
     LoginComponent,
     HomeComponent,
-    MenuComponent
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatIconModule,
+    MatProgressSpinnerModule,
   ],
   providers: [
     provideAnimationsAsync()
