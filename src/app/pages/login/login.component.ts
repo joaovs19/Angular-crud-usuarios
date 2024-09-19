@@ -15,6 +15,7 @@ export class LoginComponent {
   login(){
     sessionStorage.setItem('user', this.userName);
 
-    this.rota.navigate(['home'])
+    this.rota.navigate(['home']);
+
   }
 }

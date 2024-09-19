@@ -5,9 +5,9 @@
     <h1 class="titulo">CRUD USERS</h1>
     <h2 class="subtitulo">Mais eficiência no controle de usuários</h2>
 
-    <input class="input-form" type="text" placeholder="Digite seu nome">
+    <input [(ngModel)]="userName" [ngModelOptions]="{standalone: true}" class="input-form" type="text" placeholder="Digite seu nome">
 
-    <app-button textButton="Acessar" size="100" routerLink="/home"></app-button>
+    <app-button textButton="Acessar" size="100" (click)="login()" required ></app-button>
 
 
   </form>

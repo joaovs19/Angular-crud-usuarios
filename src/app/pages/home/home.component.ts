@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  userName: string | null;
+
+  ngOnInit() {
+    this.userName = sessionStorage.getItem('user');
+    console.log('userName:', this.userName);
+  }
 }
