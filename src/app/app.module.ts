@@ -12,10 +12,14 @@ import { ButtonComponent } from './components/button/button.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { AngularFireModule } from '@angular/fire/compat';
 
 //ANGULAR MATERIAL
 import { MatIconModule } from '@angular/material/icon'
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { environment } from '../environments/environment.development';
 
 
 @NgModule({
@@ -36,9 +40,13 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     //Angular Material
     MatIconModule,
     MatProgressSpinnerModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
 
   ],
-  providers: [],
+  providers: [
+    provideFirebaseApp(() => initializeApp({"projectId":"crud-usuarios-angular-cb3b1","appId":"1:465790462358:web:9a26f5d46303e811d955b7","storageBucket":"crud-usuarios-angular-cb3b1.appspot.com","apiKey":"AIzaSyCb2_rVtq72s1-cjA3kJc9viXS-ScI6S-g","authDomain":"crud-usuarios-angular-cb3b1.firebaseapp.com","messagingSenderId":"465790462358"})),
+    provideFirestore(() => getFirestore())
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
