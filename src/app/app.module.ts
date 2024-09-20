@@ -20,7 +20,12 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { environment } from '../environments/environment.development';
-
+import { CrudComponent } from './pages/crud/crud.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableModule} from '@angular/material/table';
+import { MatSortModule} from '@angular/material/sort';
+import { MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -29,6 +34,9 @@ import { environment } from '../environments/environment.development';
     LoginComponent,
     HomeComponent,
     MenuComponent,
+    CrudComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -40,8 +48,12 @@ import { environment } from '../environments/environment.development';
     //Angular Material
     MatIconModule,
     MatProgressSpinnerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-
   ],
   providers: [
     provideFirebaseApp(() => initializeApp({"projectId":"crud-usuarios-angular-cb3b1","appId":"1:465790462358:web:9a26f5d46303e811d955b7","storageBucket":"crud-usuarios-angular-cb3b1.appspot.com","apiKey":"AIzaSyCb2_rVtq72s1-cjA3kJc9viXS-ScI6S-g","authDomain":"crud-usuarios-angular-cb3b1.firebaseapp.com","messagingSenderId":"465790462358"})),
