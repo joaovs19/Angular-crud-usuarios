@@ -6,6 +6,7 @@ import { User } from '../../interfaces/user';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalViewUserComponent } from './modal-view-user/modal-view-user.component';
+import { ModalFormUserComponent } from './modal-form-user/modal-form-user.component';
 
 @Component({
   selector: 'app-crud',
@@ -68,5 +69,12 @@ export class CrudComponent {
       height:'350px',
       data: user
     })
+  }
+
+  openModalAddUser(){
+    this.dialog.open(ModalFormUserComponent, {
+      width: '700px',
+      height: '400px'
+    }).afterClosed().subscribe(() => this.getListUsers());
   }
 }
