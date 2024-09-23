@@ -29,6 +29,7 @@ import { MatPaginatorModule} from '@angular/material/paginator';
 import { ModalViewUserComponent } from './pages/crud/modal-view-user/modal-view-user.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ModalFormUserComponent } from './pages/crud/modal-form-user/modal-form-user.component';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -40,8 +41,6 @@ import { ModalFormUserComponent } from './pages/crud/modal-form-user/modal-form-
     CrudComponent,
     ModalViewUserComponent,
     ModalFormUserComponent,
-
-
   ],
   imports: [
     BrowserModule,
@@ -59,6 +58,7 @@ import { ModalFormUserComponent } from './pages/crud/modal-form-user/modal-form-
     MatSortModule,
     MatPaginatorModule,
     MatDialogModule,
+    MatSelectModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [
