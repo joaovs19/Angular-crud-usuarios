@@ -46,6 +46,7 @@ export class CrudComponent {
         this.dataSource = new MatTableDataSource<any>(this.listusers)
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
+        this.paginator._intl.itemsPerPageLabel="Itens por página";
       },
       error: (err) => {
         console.error(err);
@@ -62,6 +63,15 @@ export class CrudComponent {
     }
   }
 
+  deleteUser(firebaseId: string){
+    this.usersService.deleteUser(firebaseId).then(
+      (response: any) => {
+        window.alert('Usuário excluido com sucesso')
+      }
+    );
+  }
+
+
   //Lógica Modal
   openModalViewUser(user: User){
     this.dialog.open(ModalViewUserComponent, {
@@ -75,6 +85,14 @@ export class CrudComponent {
     this.dialog.open(ModalFormUserComponent, {
       width: '700px',
       height: '400px'
+    }).afterClosed().subscribe(() => this.getListUsers());
+  }
+
+  openModalEditUser(user: User){
+    this.dialog.open(ModalFormUserComponent, {
+      width: '700px',
+      height: '400px',
+      data: user
     }).afterClosed().subscribe(() => this.getListUsers());
   }
 }
